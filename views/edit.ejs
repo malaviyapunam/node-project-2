@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+</head>
+<style>
+    /* General styling */
+    body {
+    background-color: #f4f7fc;
+   
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-left: 20%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+table th {
+    background-color: #145986;
+    color: white;
+}
+
+table td {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Styling */
+button, a {
+    background-color:  #145986;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, a:hover {
+    background-color: #2980b9;
+}
+
+a {
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+a:active {
+    transform: scale(0.98);
+}
+
+/* Form Styling */
+form {
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #145986;
+}
+
+form button:hover {
+    background-color:#2980b9;
+}
+
+form .back-link {
+    /* text-align: center; */
+    /* display: block; */
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+form .back-link a {
+    color: #3498db;
+    text-decoration: none;
+    margin-left: 20%;
+}
+
+form .back-link a:hover {
+    text-decoration: underline;
+} 
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+
+</style>
+
+</style>
+<body>
+    <h1>Edit Student</h1>
+    <form action="/edit-student/<%=student.id %>" method="POST">
+        <input type="hidden" name="id" value="<%= student.id %>">
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%=student.name %>" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="<%=student.email %>" required><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone" value="<%= student.phone %>" required><br>
+        
+        <button type="submit">Update Student</button>
+    </form>
+
+</body>
+</html>
